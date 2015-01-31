@@ -1,14 +1,18 @@
 class AsciiTree::Edge
 
-  attr_reader :parent_coordinate, :child_coordinate
+  attr_reader :character, :coordinate, :parent_coordinate, :child_coordinate
 
-  def initialize(parent_coordinate:, child_coordinate:)
+  def initialize(character:, coordinate:, parent_coordinate:, child_coordinate:)
+    @character         = character
+    @coordinate        = coordinate
     @parent_coordinate = parent_coordinate
     @child_coordinate  = child_coordinate
   end
 
   def ==(other)
-    parent_coordinate == other.parent_coordinate &&
+    character == other.character &&
+      coordinate == other.coordinate &&
+      parent_coordinate == other.parent_coordinate &&
       child_coordinate == other.child_coordinate
   end
 

@@ -7,6 +7,8 @@ module AsciiTree
           offsets = edge_offsets[char]
 
           Edge.new(
+            character: char,
+            coordinate: coordinate,
             parent_coordinate: Coordinate.new(
               x: coordinate.x + offsets[:parent][:x],
               y: coordinate.y + offsets[:parent][:y]
