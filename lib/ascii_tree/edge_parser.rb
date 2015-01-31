@@ -30,37 +30,9 @@ module AsciiTree
       end
 
       def edge_chars_with_coordinates(string)
-        chars_with_coordinates(string).select do |char, _|
+        Scanner.scan(string).select do |char, _|
           edge_offsets.keys.include?(char)
         end
-      end
-
-      def chars_with_coordinates(string)
-        chars = []
-
-        indexed_lines(string).each do |line, y|
-          indexed_chars(line).each do |char, x|
-            chars << [char, Coordinate.new(x: x, y: y)]
-          end
-        end
-
-        chars
-      end
-
-      def indexed_lines(string)
-        lines(string).each.with_index.to_a
-      end
-
-      def lines(string)
-        string.split("\n")
-      end
-
-      def indexed_chars(line)
-        chars(line).each_with_index.to_a
-      end
-
-      def chars(line)
-        line.split("")
       end
 
     end
