@@ -15,5 +15,19 @@ module AsciiTree
         end_coordinate == other.end_coordinate
     end
 
+    def include?(coordinate)
+      same_line?(coordinate.y) && inside?(coordinate.x)
+    end
+
+    private
+
+    def same_line?(y)
+      y == start_coordinate.y && y == end_coordinate.y
+    end
+
+    def inside?(x)
+      (start_coordinate.x..end_coordinate.x).include?(x)
+    end
+
   end
 end
