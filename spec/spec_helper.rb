@@ -1,4 +1,5 @@
 require "rspec"
+require "pry"
 require "ascii_tree"
 
 RSpec.configure do |config|
