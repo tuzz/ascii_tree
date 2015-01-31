@@ -52,5 +52,29 @@ module AsciiTree
       end
     end
 
+    it "copes with nested parenthesis" do
+      subject.read("(")
+      subject.read("(")
+      subject.read("(")
+
+      subject.read(")")
+      expect(subject).to be_on
+
+      subject.read(")")
+      expect(subject).to be_on
+
+      subject.read(")")
+      expect(subject).to be_off
+
+      subject.read(")")
+      subject.read(")")
+      subject.read(")")
+      subject.read(")")
+      expect(subject).to be_off
+
+      subject.read("(")
+      expect(subject).to be_on
+    end
+
   end
 end

@@ -2,7 +2,7 @@ module AsciiTree
   class ParenthesisToggle
 
     def initialize
-      @on = false
+      @on, @count = false, 0
     end
 
     def read(char)
@@ -11,6 +11,15 @@ module AsciiTree
       elsif char == ")"
         @on = false
       end
+
+      if char == "("
+        @count += 1
+      elsif char == ")"
+        @count -= 1
+        @count = 0 if @count < 0
+      end
+
+      @on = @count > 0
     end
 
     def on?
