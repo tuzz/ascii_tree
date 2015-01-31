@@ -4,20 +4,24 @@ module AsciiTree
   describe CommentStripper do
 
     it "strips comments" do
-      string = '
+      result = described_class.strip('
           # comment
                 root  # comment
                 /  \
                a    b  # / \ | comment
-      '
+      ')
 
-      described_class.strip!(string)
-
-      expect(string).to eq('
+      expect(result).to eq('
                 root
                 /  \
                a    b
       ')
+    end
+
+    it "does not mutate its input" do
+      string = "#comment"
+      described_class.strip(string)
+      expect(string).to eq("#comment")
     end
 
   end

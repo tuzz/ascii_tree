@@ -1,9 +1,8 @@
 module AsciiTree
   module CommentStripper
 
-    def self.strip!(string)
-      string.gsub!(/#[^\n]*/, "")
-      string.gsub!(/\s+\n/, "\n")
+    def self.strip(string)
+      string.gsub(/#[^\n]*/, "").gsub(/\s+\n/, "\n")
     end
 
   end
