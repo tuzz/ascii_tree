@@ -27,5 +27,7 @@ module AsciiTree
       ]
     end
 
+    pending "handle cases with paranthesis and values"
+
   end
 end
