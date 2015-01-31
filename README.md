@@ -8,21 +8,21 @@ understand. It is an expressive and efficient way to define trees.
 ## Usage
 
 ```ruby
-root = AsciiTree.parse("
+root = AsciiTree.parse('
 
-    # Here's a Christmas themed tree:
+      # Christmas themed tree:
 
               chestnuts
               /     |  \
           roasting  on  an
-           /   \         \
-         open  fire      jack
+            /   \         \
+        open   fire       jack
                /   \
             frost  nipping
                     /  |  \
                   on  your nose   # Ouch!
 
-")
+')
 
 root.id
 #=> "chestnuts"
@@ -39,13 +39,13 @@ root.children
 Use parenthesis to group words into a single node:
 
 ```ruby
-root = AsciiTree.parse("
+root = AsciiTree.parse('
 
           (this is a single node)
               /    |    |    |   \
     (so is this)  but these are separate
 
-")
+')
 
 root.id
 #=> "this is a single node"
@@ -56,15 +56,15 @@ root.id
 You can set arbitrary values on nodes:
 
 ```ruby
-root = AsciiTree.parse("
+root = AsciiTree.parse('
 
         root{123}
          /    \
-     a{'foo'}  b
+     a{"foo"}  b
        / \
       c   d{ [1, 2, 3].reverse }
 
-")
+')
 
 root.value
 #=> 123

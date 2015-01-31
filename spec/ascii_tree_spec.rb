@@ -3,9 +3,9 @@ require "spec_helper"
 describe AsciiTree do
 
   it "works for the 'Usage' example in the readme" do
-    root = AsciiTree.parse("
+    root = AsciiTree.parse('
 
-        # Here's a Christmas themed tree:
+          # Christmas themed tree:
 
                   chestnuts
                   /     |  \
@@ -17,7 +17,7 @@ describe AsciiTree do
                         /  |  \
                       on  your nose   # Ouch!
 
-    ")
+    ')
 
     expect(root.id).to eq("chestnuts")
     expect(root.parent).to be_nil
@@ -67,13 +67,13 @@ describe AsciiTree do
   end
 
   it "works for the 'Multiple Words' example in the readme" do
-    root = AsciiTree.parse("
+    root = AsciiTree.parse('
 
               (this is a single node)
                   /    |    |    |   \
         (so is this)  but these are separate
 
-    ")
+    ')
 
     expect(root.id).to eq("this is a single node")
     expect(root.children.size).to eq(5)
@@ -87,15 +87,15 @@ describe AsciiTree do
   end
 
   it "works for the 'Values' example in the readme" do
-    root = AsciiTree.parse("
+  root = AsciiTree.parse('
 
-            root{123}
-            /    \
-        a{'foo'}  b
-          / \
-         c   d{ [1, 2, 3].reverse }
+          root{123}
+          /    \
+      a{"foo"}  b
+        / \
+       c   d{ [1, 2, 3].reverse }
 
-    ")
+  ')
 
     expect(root.value).to eq(123)
     expect(root.children.size).to eq(2)
