@@ -4,11 +4,11 @@ module AsciiTree
 
       def parse(string)
         chars = word_chars_with_coordinates(string)
-        group_contiguous(chars).map do |word|
+        group_contiguous(chars).map do |word_with_coords|
           Word.new(
-            id: word.map(&:first).join,
-            start_coordinate: word.first.last,
-            end_coordinate: word.last.last
+            id: id(word_with_coords),
+            start_coordinate: word_with_coords.first.last,
+            end_coordinate: word_with_coords.last.last
           )
         end
       end
@@ -16,9 +16,24 @@ module AsciiTree
       private
 
       def word_chars_with_coordinates(string)
-        Scanner.scan(string).reject do |char, _|
-          ["/", "|", "\\"].include?(char) || char.match(/\s/)
+        toggle = ParenthesisToggle.new
+
+        Scanner.scan(string).reject do |char, coordinate|
+          toggle.read(char)
+          toggle.off? && (edge?(char) || whitespace?(char))
         end
+      end
+
+      def edge?(char)
+        ["/", "|", "\\"].include?(char)
+      end
+
+      def whitespace?(char)
+        char.match(/\s/)
+      end
+
+      def id(word_with_coords)
+        word_with_coords.map(&:first).join.gsub(/[\(\)]/, "")
       end
 
       def group_contiguous(chars)

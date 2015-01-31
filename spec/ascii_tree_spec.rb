@@ -66,7 +66,7 @@ describe AsciiTree do
     expect(nose.children.size).to eq(0)
   end
 
-  it "works for the 'Multiple Words' example in the readme" do
+  it "works for the 'Multiple words' example in the readme" do
     root = AsciiTree.parse('
 
               (this is a single node)

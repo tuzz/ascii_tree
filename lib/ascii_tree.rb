@@ -1,6 +1,7 @@
 require "ascii_tree/base"
 
 require "ascii_tree/coordinate"
+require "ascii_tree/parenthesis_toggle"
 require "ascii_tree/word"
 require "ascii_tree/edge"
 require "ascii_tree/relationship"
