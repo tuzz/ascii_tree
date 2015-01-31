@@ -13,13 +13,13 @@ root = AsciiTree.parse("
     # Here's a Christmas themed tree:
 
               chestnuts
-              /    \   \
+              /     |  \
           roasting  on  an
            /   \         \
          open  fire      jack
                /   \
             frost  nipping
-                    / \   \
+                    /  |  \
                   on  your nose   # Ouch!
 
 ")
@@ -42,7 +42,7 @@ Use parenthesis to group words into a single node:
 root = AsciiTree.parse("
 
           (this is a single node)
-              /   \   \     \   \
+              /    |    |    |   \
     (so is this)  but these are separate
 
 ")

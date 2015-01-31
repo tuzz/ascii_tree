@@ -8,13 +8,13 @@ describe AsciiTree do
         # Here's a Christmas themed tree:
 
                   chestnuts
-                  /    \   \
+                  /     |  \
               roasting  on  an
-              /   \          \
+               /   \         \
             open  fire       jack
                   /   \
                 frost  nipping
-                        / \   \
+                        /  |  \
                       on  your nose   # Ouch!
 
     ")
@@ -70,7 +70,7 @@ describe AsciiTree do
     root = AsciiTree.parse("
 
               (this is a single node)
-                  /   \   \     \   \
+                  /    |    |    |   \
         (so is this)  but these are separate
 
     ")
