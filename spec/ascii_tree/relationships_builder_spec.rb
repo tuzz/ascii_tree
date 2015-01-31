@@ -69,6 +69,28 @@ module AsciiTree
           described_class.build(words, edges)
         }.to raise_error(/no child/i)
       end
+
+      it "raises an error if a child has more than one parent" do
+        another_parent = Word.new(
+          id: "another parent",
+          start_coordinate: Coordinate.new(x: 6, y: 0),
+          end_coordinate: Coordinate.new(x: 9, y: 0)
+        )
+
+        another_edge = Edge.new(
+          character: "/",
+          coordinate: Coordinate.new(x: 5, y: 1),
+          parent_coordinate: Coordinate.new(x: 6, y: 0),
+          child_coordinate: Coordinate.new(x: 4, y: 2)
+        )
+
+        words = [parent, child, another_parent]
+        edges = [edge, another_edge]
+
+        expect {
+          described_class.build(words, edges)
+        }.to raise_error(/more than one parent/)
+      end
     end
 
   end
