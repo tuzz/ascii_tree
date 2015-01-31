@@ -5,6 +5,7 @@ module AsciiTree
     let(:parent) do
       Word.new(
         id: "parent",
+        value: nil,
         start_coordinate: Coordinate.new(x: 0, y: 0),
         end_coordinate: Coordinate.new(x: 5, y: 0)
       )
@@ -13,6 +14,7 @@ module AsciiTree
     let(:child) do
       Word.new(
         id: "child",
+        value: nil,
         start_coordinate: Coordinate.new(x: 0, y: 2),
         end_coordinate: Coordinate.new(x: 5, y: 2)
       )
@@ -73,6 +75,7 @@ module AsciiTree
       it "raises an error if a child has more than one parent" do
         another_parent = Word.new(
           id: "another parent",
+          value: nil,
           start_coordinate: Coordinate.new(x: 6, y: 0),
           end_coordinate: Coordinate.new(x: 9, y: 0)
         )

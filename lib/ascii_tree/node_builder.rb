@@ -24,7 +24,7 @@ module AsciiTree
     def build_for(word, parent)
       node = Node.new(
         id: word.id,
-        value: nil,
+        value: word.value,
         parent: parent,
         children: []
       )

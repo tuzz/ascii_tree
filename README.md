@@ -62,7 +62,7 @@ root = AsciiTree.parse('
          /    \
      a{"foo"}  b
        / \
-      c   d{ [1, 2, 3].reverse }
+      c   d{[1,2,3].reverse}
 
 ')
 

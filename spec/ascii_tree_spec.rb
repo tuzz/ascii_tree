@@ -87,15 +87,15 @@ describe AsciiTree do
   end
 
   it "works for the 'Values' example in the readme" do
-  root = AsciiTree.parse('
+    root = AsciiTree.parse('
 
-          root{123}
-          /    \
-      a{"foo"}  b
-        / \
-       c   d{ [1, 2, 3].reverse }
+            root{123}
+            /    \
+        a{"foo"}  b
+          / \
+         c   d{[1,2,3].reverse}
 
-  ')
+    ')
 
     expect(root.value).to eq(123)
     expect(root.children.size).to eq(2)

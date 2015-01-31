@@ -1,16 +1,18 @@
 module AsciiTree
   class Word
 
-    attr_reader :id, :start_coordinate, :end_coordinate
+    attr_reader :id, :value, :start_coordinate, :end_coordinate
 
-    def initialize(id:, start_coordinate:, end_coordinate:)
+    def initialize(id:, value:, start_coordinate:, end_coordinate:)
       @id               = id
+      @value            = value
       @start_coordinate = start_coordinate
       @end_coordinate   = end_coordinate
     end
 
     def ==(other)
       id == other.id &&
+        value == other.value &&
         start_coordinate == other.start_coordinate &&
         end_coordinate == other.end_coordinate
     end
