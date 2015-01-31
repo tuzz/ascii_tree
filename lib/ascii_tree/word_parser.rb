@@ -8,7 +8,7 @@ module AsciiTree
           id, value = id_value(word_with_coords)
 
           Word.new(
-            id: id,
+            id: id.strip,
             value: value,
             start_coordinate: word_with_coords.first.last,
             end_coordinate: word_with_coords.last.last

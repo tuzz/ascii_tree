@@ -32,7 +32,7 @@ module AsciiTree
 
     it "respects parenthesis" do
       words = described_class.parse('
-          (foo bar) baz
+          (foo bar) baz (       qux        )
       ')
 
       expect(words).to eq [
@@ -47,6 +47,12 @@ module AsciiTree
           value: nil,
           start_coordinate: Coordinate.new(x: 20, y: 1),
           end_coordinate: Coordinate.new(x: 22, y: 1)
+        ),
+        Word.new(
+          id: "qux",
+          value: nil,
+          start_coordinate: Coordinate.new(x: 24, y: 1),
+          end_coordinate: Coordinate.new(x: 43, y: 1)
         )
       ]
     end

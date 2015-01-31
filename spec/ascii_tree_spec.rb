@@ -69,13 +69,13 @@ describe AsciiTree do
   it "works for the 'Multiple words' example in the readme" do
     root = AsciiTree.parse('
 
-              (this is a single node)
+              (     single node     )
                   /    |    |    |   \
         (so is this)  but these are separate
 
     ')
 
-    expect(root.id).to eq("this is a single node")
+    expect(root.id).to eq("single node")
     expect(root.children.size).to eq(5)
 
     so_is_this, but, these, are, separate = root.children

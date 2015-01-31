@@ -41,14 +41,14 @@ Use parenthesis to group words into a single node:
 ```ruby
 root = AsciiTree.parse('
 
-          (this is a single node)
+          (     single node     )
               /    |    |    |   \
     (so is this)  but these are separate
 
 ')
 
 root.id
-#=> "this is a single node"
+#=> "single node"
 ```
 
 ## Values
