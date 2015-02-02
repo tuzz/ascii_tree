@@ -3,7 +3,12 @@ module AsciiTree
     class << self
 
       def build(words, edges)
-        relationships = edges.map do |edge|
+        relationships = []
+
+        root_relationship = root_relationship(words)
+        relationships << root_relationship if root_relationship
+
+        relationships += edges.map do |edge|
           parent = words.detect { |w| w.include?(edge.parent_coordinate) }
           child  = words.detect { |w| w.include?(edge.child_coordinate) }
 
@@ -17,6 +22,14 @@ module AsciiTree
       end
 
       private
+
+      def root_relationship(words)
+        root_word = words.first
+
+        if root_word
+          Relationship.new(parent_word: nil, edge: nil, child_word: root_word)
+        end
+      end
 
       def validate_presence(parent, child, edge)
         if parent.nil? && child.nil?

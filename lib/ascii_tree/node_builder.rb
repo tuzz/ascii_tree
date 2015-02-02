@@ -10,7 +10,11 @@ module AsciiTree
     end
 
     def build
-      build_for(root_word, nil)
+      if relationships.any?
+        build_for(root_word, nil)
+      else
+        nil
+      end
     end
 
     private
@@ -18,7 +22,11 @@ module AsciiTree
     attr_reader :relationships
 
     def root_word
-      relationships.first.parent_word
+      root_relationship.child_word
+    end
+
+    def root_relationship
+      relationships.detect { |r| r.parent_word.nil? }
     end
 
     def build_for(word, parent)

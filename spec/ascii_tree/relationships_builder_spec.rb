@@ -37,11 +37,24 @@ module AsciiTree
 
       expect(relationships).to eq [
         Relationship.new(
+          parent_word: nil,
+          edge: nil,
+          child_word: parent
+        ),
+        Relationship.new(
           parent_word: parent,
           edge: edge,
           child_word: child
         )
       ]
+    end
+
+    it "returns an empty array when there are no words" do
+      words = []
+      edges = []
+
+      relationships = described_class.build(words, edges)
+      expect(relationships).to be_empty
     end
 
     describe "error cases" do
