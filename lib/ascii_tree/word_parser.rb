@@ -40,6 +40,7 @@ module AsciiTree
         chars = remove_parentheses(chars)
 
         word = chars.join
+        word.strip!
 
         if word.end_with?("}")
           id, tail = word.split("{", 2)

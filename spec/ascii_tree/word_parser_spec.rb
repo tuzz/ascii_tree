@@ -84,5 +84,21 @@ module AsciiTree
       ]
     end
 
+    it "works with parentheses and values are combined" do
+      words = described_class.parse('
+              (     foo{1}      )
+      ')
+
+      expect(words).to eq [
+        Word.new(
+          id: "foo",
+          value: 1,
+          start_coordinate: Coordinate.new(x: 14, y: 1),
+          end_coordinate: Coordinate.new(x: 32, y: 1)
+        )
+      ]
+
+    end
+
   end
 end
