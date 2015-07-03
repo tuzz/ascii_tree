@@ -1,5 +1,7 @@
 ## Ascii Tree
 
+[![Build Status](https://travis-ci.org/tuzz/ascii_tree.svg?branch=master)](https://travis-ci.org/tuzz/ascii_tree)
+
 Parses a usable tree from ASCII art.
 
 Ascii Tree turns something humans understand into something computers
