@@ -2,7 +2,6 @@ require "spec_helper"
 
 module AsciiTree
   RSpec.describe CommentStripper do
-
     it "strips comments" do
       result = described_class.strip('
           # comment
@@ -23,6 +22,5 @@ module AsciiTree
       described_class.strip(string)
       expect(string).to eq("#comment")
     end
-
   end
 end

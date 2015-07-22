@@ -1,7 +1,6 @@
 module AsciiTree
   module WordParser
     class << self
-
       def parse(string)
         chars = word_chars_with_coordinates(string)
         group_contiguous(chars).map do |word_with_coords|
@@ -21,7 +20,7 @@ module AsciiTree
       def word_chars_with_coordinates(string)
         toggle = ParenthesisToggle.new
 
-        Scanner.scan(string).reject do |char, coordinate|
+        Scanner.scan(string).reject do |char, _coordinate|
           toggle.read(char)
           toggle.off? && (edge?(char) || whitespace?(char))
         end
@@ -61,7 +60,7 @@ module AsciiTree
       end
 
       def group_contiguous(chars)
-        chars.inject([]) do |array, (char, coord)|
+        chars.each_with_object([]) do |(char, coord), array|
           prev = previous_coordinate(array)
 
           if contigous?(prev, coord)
@@ -69,8 +68,6 @@ module AsciiTree
           else
             array << [[char, coord]]
           end
-
-          array
         end
       end
 
@@ -85,7 +82,6 @@ module AsciiTree
           previous_coordinate.y == coordinate.y &&
           previous_coordinate.x == coordinate.x - 1
       end
-
     end
   end
 end

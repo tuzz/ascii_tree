@@ -1,7 +1,6 @@
 module AsciiTree
   module Scanner
     class << self
-
       def scan(string)
         Enumerator.new do |yielder|
           indexed_lines(string).each do |line, y|
@@ -29,7 +28,6 @@ module AsciiTree
       def chars(line)
         line.split("")
       end
-
     end
   end
 end

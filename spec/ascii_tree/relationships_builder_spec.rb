@@ -62,27 +62,27 @@ module AsciiTree
         words = []
         edges = [edge]
 
-        expect {
+        expect do
           described_class.build(words, edges)
-        }.to raise_error(/no parent or child/i)
+        end.to raise_error(/no parent or child/i)
       end
 
       it "raises an error if there is no parent" do
         words = [child]
         edges = [edge]
 
-        expect {
+        expect do
           described_class.build(words, edges)
-        }.to raise_error(/no parent/i)
+        end.to raise_error(/no parent/i)
       end
 
       it "raises an error if there is no child" do
         words = [parent]
         edges = [edge]
 
-        expect {
+        expect do
           described_class.build(words, edges)
-        }.to raise_error(/no child/i)
+        end.to raise_error(/no child/i)
       end
 
       it "raises an error if a child has more than one parent" do
@@ -103,11 +103,10 @@ module AsciiTree
         words = [parent, child, another_parent]
         edges = [edge, another_edge]
 
-        expect {
+        expect do
           described_class.build(words, edges)
-        }.to raise_error(/more than one parent/)
+        end.to raise_error(/more than one parent/)
       end
     end
-
   end
 end

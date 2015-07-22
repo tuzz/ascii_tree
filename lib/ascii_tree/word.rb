@@ -1,6 +1,5 @@
 module AsciiTree
   class Word
-
     attr_reader :identity, :value, :start_coordinate, :end_coordinate
 
     def initialize(identity:, value:, start_coordinate:, end_coordinate:)
@@ -30,6 +29,5 @@ module AsciiTree
     def inside?(x)
       (start_coordinate.x..end_coordinate.x).include?(x)
     end
-
   end
 end

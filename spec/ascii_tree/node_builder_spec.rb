@@ -13,7 +13,7 @@ module AsciiTree
             identity: "root",
             value: "root value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           )
         ),
         Relationship.new(
@@ -21,14 +21,14 @@ module AsciiTree
             identity: "root",
             value: "root value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           ),
           edge: double(:edge),
           child_word: Word.new(
             identity: "a",
             value: "a value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           )
         ),
         Relationship.new(
@@ -36,14 +36,14 @@ module AsciiTree
             identity: "root",
             value: "root value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           ),
           edge: double(:edge),
           child_word: Word.new(
             identity: "b",
             value: "b value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           )
         ),
         Relationship.new(
@@ -51,16 +51,16 @@ module AsciiTree
             identity: "a",
             value: "a value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           ),
           edge: double(:edge),
           child_word: Word.new(
             identity: "c",
             value: "c value",
             start_coordinate: coordinate,
-            end_coordinate: coordinate,
+            end_coordinate: coordinate
           )
-        ),
+        )
       ]
     end
 
@@ -88,6 +88,5 @@ module AsciiTree
       result = described_class.build([])
       expect(result).to be_nil
     end
-
   end
 end

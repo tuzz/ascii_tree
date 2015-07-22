@@ -7,7 +7,7 @@ module AsciiTree
         identity: "foo",
         value: 123,
         start_coordinate: Coordinate.new(x: 3, y: 50),
-        end_coordinate: Coordinate.new(x: 5, y: 50),
+        end_coordinate: Coordinate.new(x: 5, y: 50)
       )
     end
 
@@ -26,6 +26,5 @@ module AsciiTree
         expect(subject).to_not include(Coordinate.new(x: 3, y: 51))
       end
     end
-
   end
 end

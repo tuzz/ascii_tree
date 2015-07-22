@@ -1,6 +1,5 @@
 module AsciiTree
   class NodeBuilder
-
     def self.build(*args)
       new(*args).build
     end
@@ -10,11 +9,7 @@ module AsciiTree
     end
 
     def build
-      if relationships.any?
-        build_for(root_word, nil)
-      else
-        nil
-      end
+      build_for(root_word, nil) if relationships.any?
     end
 
     private
@@ -53,6 +48,5 @@ module AsciiTree
         build_for(r.child_word, parent)
       end
     end
-
   end
 end

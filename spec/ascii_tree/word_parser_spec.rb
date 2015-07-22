@@ -2,7 +2,6 @@ require "spec_helper"
 
 module AsciiTree
   RSpec.describe WordParser do
-
     it "parses words" do
       words = described_class.parse('
           foo bar baz
@@ -97,8 +96,6 @@ module AsciiTree
           end_coordinate: Coordinate.new(x: 32, y: 1)
         )
       ]
-
     end
-
   end
 end

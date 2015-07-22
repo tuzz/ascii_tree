@@ -1,7 +1,6 @@
 module AsciiTree
   module EdgeParser
     class << self
-
       def parse(string)
         edge_chars_with_coordinates(string).map do |char, coordinate|
           offsets = edge_offsets[char]
@@ -36,7 +35,6 @@ module AsciiTree
           edge_offsets.keys.include?(char)
         end
       end
-
     end
   end
 end

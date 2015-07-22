@@ -2,7 +2,6 @@ require "spec_helper"
 
 module AsciiTree
   RSpec.describe ParenthesisToggle do
-
     it "is initialized in the 'off' position" do
       expect(subject).to be_off
     end
@@ -75,6 +74,5 @@ module AsciiTree
       subject.read("(")
       expect(subject).to be_on
     end
-
   end
 end

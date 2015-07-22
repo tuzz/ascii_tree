@@ -1,8 +1,8 @@
 module AsciiTree
   class ParenthesisToggle
-
     def initialize
-      @on, @count = false, 0
+      @on = false
+      @count = 0
     end
 
     def read(char)
@@ -33,6 +33,5 @@ module AsciiTree
     private
 
     attr_reader :on
-
   end
 end

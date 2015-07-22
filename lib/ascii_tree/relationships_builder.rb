@@ -1,7 +1,6 @@
 module AsciiTree
   module RelationshipsBuilder
     class << self
-
       def build(words, edges)
         relationships = []
 
@@ -24,11 +23,10 @@ module AsciiTree
       private
 
       def root_relationship(words)
-        root_word = words.first
+        return unless words.any?
 
-        if root_word
-          Relationship.new(parent_word: nil, edge: nil, child_word: root_word)
-        end
+        root_word = words.first
+        Relationship.new(parent_word: nil, edge: nil, child_word: root_word)
       end
 
       def validate_presence(parent, child, edge)
@@ -40,11 +38,11 @@ module AsciiTree
           error = "No child for parent '#{parent.identity}'"
         end
 
-        if error
-          c = edge.coordinate
-          error += " for edge '#{edge.character}' at line #{c.y}, column #{c.x}"
-          raise ::AsciiTree::RelationshipError, error
-        end
+        return unless error
+
+        c = edge.coordinate
+        error += " for edge '#{edge.character}' at line #{c.y}, column #{c.x}"
+        fail ::AsciiTree::RelationshipError, error
       end
 
       def validate_one_parent(relationships)
@@ -56,10 +54,10 @@ module AsciiTree
           count > 1
         end
 
-        groups = multiple_parents.group_by { |r| r.child_word }
+        groups = multiple_parents.group_by(&:child_word)
 
-        maps = groups.map do |child_word, relationships|
-          parent_words = relationships.map(&:parent_word)
+        maps = groups.map do |child_word, rels|
+          parent_words = rels.map(&:parent_word)
           [child_word.identity, parent_words.map(&:identity)]
         end
 
@@ -72,10 +70,10 @@ module AsciiTree
           end
         end
 
-        raise ::AsciiTree::RelationshipError, error if error
+        fail ::AsciiTree::RelationshipError, error if error
       end
-
-      class ::AsciiTree::RelationshipError < StandardError; end
     end
   end
+
+  class RelationshipError < StandardError; end
 end

@@ -1,6 +1,5 @@
 module AsciiTree
   class Node
-
     attr_reader :identity, :value, :parent, :children
 
     def initialize(identity:, value:, parent:, children:)
@@ -16,6 +15,5 @@ module AsciiTree
         parent == other.parent &&
         children == other.children
     end
-
   end
 end

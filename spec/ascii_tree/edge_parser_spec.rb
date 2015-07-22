@@ -2,7 +2,6 @@ require "spec_helper"
 
 module AsciiTree
   RSpec.describe EdgeParser do
-
     it "parses edges" do
       edges = described_class.parse('
           /  |  \
@@ -29,6 +28,5 @@ module AsciiTree
         )
       ]
     end
-
   end
 end

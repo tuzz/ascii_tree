@@ -1,7 +1,6 @@
 require "spec_helper"
 
 RSpec.describe AsciiTree do
-
   it "works for the 'Usage' example in the readme" do
     root = AsciiTree.parse('
 
@@ -109,5 +108,4 @@ RSpec.describe AsciiTree do
     expect(c.value).to be_nil
     expect(d.value).to eq [3, 2, 1]
   end
-
 end
