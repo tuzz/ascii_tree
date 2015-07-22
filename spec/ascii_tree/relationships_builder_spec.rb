@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe RelationshipsBuilder do
+  RSpec.describe RelationshipsBuilder do
     let(:parent) do
       Word.new(
         identity: "parent",

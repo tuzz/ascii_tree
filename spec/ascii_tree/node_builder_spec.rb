@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe NodeBuilder do
+  RSpec.describe NodeBuilder do
     let(:coordinate) { Coordinate.new(x: 0, y: 0) }
 
     let(:relationships) do

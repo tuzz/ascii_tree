@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe ParenthesisToggle do
+  RSpec.describe ParenthesisToggle do
 
     it "is initialized in the 'off' position" do
       expect(subject).to be_off

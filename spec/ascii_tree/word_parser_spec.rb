@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe WordParser do
+  RSpec.describe WordParser do
 
     it "parses words" do
       words = described_class.parse('

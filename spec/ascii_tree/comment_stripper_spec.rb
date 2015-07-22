@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe CommentStripper do
+  RSpec.describe CommentStripper do
 
     it "strips comments" do
       result = described_class.strip('

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe AsciiTree do
+RSpec.describe AsciiTree do
 
   it "works for the 'Usage' example in the readme" do
     root = AsciiTree.parse('

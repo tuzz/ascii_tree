@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe EdgeParser do
+  RSpec.describe EdgeParser do
 
     it "parses edges" do
       edges = described_class.parse('

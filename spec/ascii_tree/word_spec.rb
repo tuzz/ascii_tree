@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module AsciiTree
-  describe Word do
+  RSpec.describe Word do
     subject do
       described_class.new(
         identity: "foo",
