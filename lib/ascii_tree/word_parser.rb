@@ -5,10 +5,10 @@ module AsciiTree
       def parse(string)
         chars = word_chars_with_coordinates(string)
         group_contiguous(chars).map do |word_with_coords|
-          id, value = id_value(word_with_coords)
+          identity, value = identity_value(word_with_coords)
 
           Word.new(
-            id: id.strip,
+            identity: identity.strip,
             value: value,
             start_coordinate: word_with_coords.first.last,
             end_coordinate: word_with_coords.last.last
@@ -35,7 +35,7 @@ module AsciiTree
         char.match(/\s/)
       end
 
-      def id_value(word_with_coords)
+      def identity_value(word_with_coords)
         chars = word_with_coords.map(&:first)
         chars = remove_parentheses(chars)
 
@@ -43,10 +43,10 @@ module AsciiTree
         word.strip!
 
         if word.end_with?("}")
-          id, tail = word.split("{", 2)
+          identity, tail = word.split("{", 2)
           expression = tail[0..-2]
           value = eval(expression)
-          [id, value]
+          [identity, value]
         else
           [word, nil]
         end

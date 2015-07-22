@@ -10,19 +10,19 @@ module AsciiTree
 
       expect(words).to eq [
         Word.new(
-          id: "foo",
+          identity: "foo",
           value: nil,
           start_coordinate: Coordinate.new(x: 10, y: 1),
           end_coordinate: Coordinate.new(x: 12, y: 1)
         ),
         Word.new(
-          id: "bar",
+          identity: "bar",
           value: nil,
           start_coordinate: Coordinate.new(x: 14, y: 1),
           end_coordinate: Coordinate.new(x: 16, y: 1)
         ),
         Word.new(
-          id: "baz",
+          identity: "baz",
           value: nil,
           start_coordinate: Coordinate.new(x: 18, y: 1),
           end_coordinate: Coordinate.new(x: 20, y: 1)
@@ -37,19 +37,19 @@ module AsciiTree
 
       expect(words).to eq [
         Word.new(
-          id: "foo bar",
+          identity: "foo bar",
           value: nil,
           start_coordinate: Coordinate.new(x: 10, y: 1),
           end_coordinate: Coordinate.new(x: 18, y: 1)
         ),
         Word.new(
-          id: "baz",
+          identity: "baz",
           value: nil,
           start_coordinate: Coordinate.new(x: 20, y: 1),
           end_coordinate: Coordinate.new(x: 22, y: 1)
         ),
         Word.new(
-          id: "qux",
+          identity: "qux",
           value: nil,
           start_coordinate: Coordinate.new(x: 24, y: 1),
           end_coordinate: Coordinate.new(x: 43, y: 1)
@@ -64,19 +64,19 @@ module AsciiTree
 
       expect(words).to eq [
         Word.new(
-          id: "foo",
+          identity: "foo",
           value: 1,
           start_coordinate: Coordinate.new(x: 10, y: 1),
           end_coordinate: Coordinate.new(x: 15, y: 1)
         ),
         Word.new(
-          id: "bar",
+          identity: "bar",
           value: "2",
           start_coordinate: Coordinate.new(x: 17, y: 1),
           end_coordinate: Coordinate.new(x: 24, y: 1)
         ),
         Word.new(
-          id: "baz",
+          identity: "baz",
           value: 3,
           start_coordinate: Coordinate.new(x: 26, y: 1),
           end_coordinate: Coordinate.new(x: 46, y: 1)
@@ -91,7 +91,7 @@ module AsciiTree
 
       expect(words).to eq [
         Word.new(
-          id: "foo",
+          identity: "foo",
           value: 1,
           start_coordinate: Coordinate.new(x: 14, y: 1),
           end_coordinate: Coordinate.new(x: 32, y: 1)

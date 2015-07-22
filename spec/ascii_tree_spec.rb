@@ -19,14 +19,14 @@ describe AsciiTree do
 
     ')
 
-    expect(root.id).to eq("chestnuts")
+    expect(root.identity).to eq("chestnuts")
     expect(root.parent).to be_nil
     expect(root.children.size).to eq(3)
 
     roasting, on, an = root.children
-    expect(roasting.id).to eq("roasting")
-    expect(on.id).to eq("on")
-    expect(an.id).to eq("an")
+    expect(roasting.identity).to eq("roasting")
+    expect(on.identity).to eq("on")
+    expect(an.identity).to eq("an")
     expect(roasting.parent).to eq(root)
     expect(on.parent).to eq(root)
     expect(an.parent).to eq(root)
@@ -36,9 +36,9 @@ describe AsciiTree do
 
     open, fire = roasting.children
     jack = an.children.first
-    expect(open.id).to eq("open")
-    expect(fire.id).to eq("fire")
-    expect(jack.id).to eq("jack")
+    expect(open.identity).to eq("open")
+    expect(fire.identity).to eq("fire")
+    expect(jack.identity).to eq("jack")
     expect(open.parent).to eq(roasting)
     expect(fire.parent).to eq(roasting)
     expect(jack.parent).to eq(an)
@@ -47,17 +47,17 @@ describe AsciiTree do
     expect(jack.children.size).to eq(0)
 
     frost, nipping = fire.children
-    expect(frost.id).to eq("frost")
-    expect(nipping.id).to eq("nipping")
+    expect(frost.identity).to eq("frost")
+    expect(nipping.identity).to eq("nipping")
     expect(frost.parent).to eq(fire)
     expect(nipping.parent).to eq(fire)
     expect(frost.children.size).to eq(0)
     expect(nipping.children.size).to eq(3)
 
     on, your, nose = nipping.children
-    expect(on.id).to eq("on")
-    expect(your.id).to eq("your")
-    expect(nose.id).to eq("nose")
+    expect(on.identity).to eq("on")
+    expect(your.identity).to eq("your")
+    expect(nose.identity).to eq("nose")
     expect(on.parent).to eq(nipping)
     expect(your.parent).to eq(nipping)
     expect(nose.parent).to eq(nipping)
@@ -75,15 +75,15 @@ describe AsciiTree do
 
     ')
 
-    expect(root.id).to eq("single node")
+    expect(root.identity).to eq("single node")
     expect(root.children.size).to eq(5)
 
     so_is_this, but, these, are, separate = root.children
-    expect(so_is_this.id).to eq("so is this")
-    expect(but.id).to eq("but")
-    expect(these.id).to eq("these")
-    expect(are.id).to eq("are")
-    expect(separate.id).to eq("separate")
+    expect(so_is_this.identity).to eq("so is this")
+    expect(but.identity).to eq("but")
+    expect(these.identity).to eq("these")
+    expect(are.identity).to eq("are")
+    expect(separate.identity).to eq("separate")
   end
 
   it "works for the 'Values' example in the readme" do

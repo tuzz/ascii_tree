@@ -1,17 +1,17 @@
 module AsciiTree
   class Node
 
-    attr_reader :id, :value, :parent, :children
+    attr_reader :identity, :value, :parent, :children
 
-    def initialize(id:, value:, parent:, children:)
-      @id       = id
+    def initialize(identity:, value:, parent:, children:)
+      @identity = identity
       @value    = value
       @parent   = parent
       @children = children
     end
 
     def ==(other)
-      id == other.id &&
+      identity == other.identity &&
         value == other.value &&
         parent == other.parent &&
         children == other.children

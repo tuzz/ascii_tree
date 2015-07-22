@@ -26,14 +26,14 @@ root = AsciiTree.parse('
 
 ')
 
-root.id
+root.identity
 #=> "chestnuts"
 
 root.parent
 #=> nil
 
 root.children
-#=> [#<AsciiTree::Node @id="roasting">, ...]
+#=> [#<AsciiTree::Node @identity="roasting">, ...]
 ```
 
 ## Multiple words
@@ -49,7 +49,7 @@ root = AsciiTree.parse('
 
 ')
 
-root.id
+root.identity
 #=> "single node"
 ```
 

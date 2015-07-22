@@ -35,9 +35,9 @@ module AsciiTree
         if parent.nil? && child.nil?
           error = "No parent or child"
         elsif parent.nil?
-          error = "No parent for child '#{child.id}'"
+          error = "No parent for child '#{child.identity}'"
         elsif child.nil?
-          error = "No child for parent '#{parent.id}'"
+          error = "No child for parent '#{parent.identity}'"
         end
 
         if error
@@ -60,7 +60,7 @@ module AsciiTree
 
         maps = groups.map do |child_word, relationships|
           parent_words = relationships.map(&:parent_word)
-          [child_word.id, parent_words.map(&:id)]
+          [child_word.identity, parent_words.map(&:identity)]
         end
 
         if maps.any?

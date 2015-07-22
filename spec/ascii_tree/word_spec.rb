@@ -4,7 +4,7 @@ module AsciiTree
   describe Word do
     subject do
       described_class.new(
-        id: "foo",
+        identity: "foo",
         value: 123,
         start_coordinate: Coordinate.new(x: 3, y: 50),
         end_coordinate: Coordinate.new(x: 5, y: 50),
