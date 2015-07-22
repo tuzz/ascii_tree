@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "ascii_tree"
-  s.version     = "1.0.3"
+  s.version     = "2.0.0"
   s.summary     = "Ascii Tree"
   s.description = "Parses a usable tree from ASCII art."
   s.author      = "Chris Patuzzo"
