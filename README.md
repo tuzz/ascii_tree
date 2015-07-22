@@ -36,6 +36,9 @@ root.children
 #=> [#<AsciiTree::Node @identity="roasting">, ...]
 ```
 
+Note: Backslash is an escape character in double quoted strings, so you'll
+need to use single quotes when parsing trees.
+
 ## Multiple words
 
 Use parenthesis to group words into a single node:
@@ -71,6 +74,8 @@ root = AsciiTree.parse('
 root.value
 #=> 123
 ```
+
+Note: Be careful to avoid spaces in blocks. AsciiTree doesn't support this.
 
 ## Contribution
 
